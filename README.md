@@ -7,10 +7,13 @@ cd .\screenshot-service
 .\terraform init
 
 
-screenshot-service
+Screenshot-service
+
 My main goal in creating this service was to create a solution that allowed me to obtain valuable information from phishing emails that attempted to lure me to a malicious URL. This service will obtian a screenshot, as well as DNS records, associated with the domain.
 
+
 The benefit of using a service like this was that I would not be making any of these requests from my home network IP, and I can even automate this by caling the API.
+
 
 Quick Start
 Download Terraform and place the executable in the directory.
@@ -32,12 +35,15 @@ Run .\terraform.exe plan, and if there are no errors, run .\terraform.exe apply.
 Generating those Screenshots
 The API Gateway accepts only GET requests. If successful, a JSON response will be returned - the "screenshot_url" key will contain the URL to your newly generated image!
 
+
 GET Request
 Simply pass the url (do NOT URL encode the string) to the gateway using the url query parameter, and you are good to go!
 https://RANDOM.execute-api.us-east-1.amazonaws.com/prod/screenshot?url=http://caliburnsecurity.com
 
+
 Obtaining DNS records
 The API Gateway accepts only GET requests. If successful, a JSON response will be returned containing the values for obtained DNS queries. By default, the following records will be queried:
+
 
 MX
 SOA
