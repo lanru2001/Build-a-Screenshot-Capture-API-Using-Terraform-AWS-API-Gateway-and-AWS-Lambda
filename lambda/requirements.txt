@@ -1,0 +1,4 @@
+cd .\lambda
+pip install selenium tldextract -t .\
+cd ..\
+Compress-Archive .\lambda -DestinationPath .\screenshot-service.zip
