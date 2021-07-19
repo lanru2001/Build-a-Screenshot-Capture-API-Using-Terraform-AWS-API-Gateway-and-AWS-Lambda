@@ -102,3 +102,8 @@ resource "aws_api_gateway_integration" "lambda_integration_post" {
   type                    = "AWS_PROXY"
   uri                     = aws_lambda_function.take_screenshot.invoke_arn
 }
+
+resource "aws_api_gateway_account" "apigw_account" {
+  cloudwatch_role_arn = aws_iam_role.apigw_cloudwatch.arn
+}
+
