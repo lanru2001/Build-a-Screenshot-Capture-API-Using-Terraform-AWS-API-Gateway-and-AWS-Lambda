@@ -74,7 +74,9 @@ resource "aws_lambda_permission" "apigw" {
   source_arn = "${aws_api_gateway_rest_api.screenshot_api.execution_arn}/*/*/*"
 }
 
-#Set up API Gateway integration with the lambda function
+#Set up API Gateway integration with the lambda function.
+#This integration tells the API Gateway what lambda function to invoke when it receives a request at the specified endpoint and HTTP method.
+
 resource "aws_api_gateway_integration" "lambda_integration_get" {
   depends_on = [
     aws_lambda_permission.apigw
